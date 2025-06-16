@@ -1,4 +1,4 @@
-name: CICD Pipeline - par 2
+name: CICD Pipeline - Par 2
 on:
   push:
     branches: [ "main" ]
@@ -13,14 +13,13 @@ jobs:
     steps:
     - name: VersionControl
       uses: actions/checkout@v4
-      
+    
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
     - name: Build and Package with Maven
       run: mvn -B clean compile package --file pom.xml
-
-    
